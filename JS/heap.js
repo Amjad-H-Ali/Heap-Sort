@@ -17,7 +17,7 @@ const heapify = (arr, indx, size) => {
 	// If largest is not the parent node, then replace parent with the larger node.
 	// Then recursively do the same to the children if any.
 	if (indx !== largest) {
-		swap(arr, arr[indx], arr[largest]);
+		swap(arr, indx, largest);
 		heapify(arr, largest, size);
 	}				  
 }
@@ -37,7 +37,7 @@ const heapSort = (arr) => {
 	// And heapify array afterwards and 'delete' last node and repeat.
 	for (let i = size - 1; i >= 0; i --) {
 		// Swap root with last node.
-		swap(arr, arr[0], arr[i]);
+		swap(arr, 0, i);
 
 		// Pass in effected portion of array into heapify to make max-heap.
 		heapify(arr, 0, i);
@@ -48,8 +48,10 @@ const heapSort = (arr) => {
 // Swap function swaps elements in array.
 const swap = (arr, indx1, indx2) => {
 	const temp = arr[indx1];
-	array[indx1] = array[indx2];
-	array[indx2] = temp;
+	arr[indx1] = arr[indx2];
+	arr[indx2] = temp;
 }
+
+console.log(heapSort([45, 1, 0, 0, 5, 6, 3, 5, 6, 5, 94, 23]));
 
 
