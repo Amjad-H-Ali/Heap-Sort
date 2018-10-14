@@ -19,9 +19,7 @@ const heapify = (arr, indx, size) => {
 	if (indx !== largest) {
 		swap(arr, arr[indx], arr[largest]);
 		heapify(arr, largest, size);
-	}
-
-					  
+	}				  
 }
 
 // Function heapifies array and swaps root with last leaf node
@@ -44,4 +42,11 @@ const heapSort = (arr) => {
 		// Pass in effected portion of array into heapify to make max-heap.
 		heapify(arr, 0, i);
 	}
+}
+
+// Swap function swaps elements in array.
+const swap = (arr, indx1, indx2) => {
+	const temp = arr[indx1];
+	array[indx1] = array[indx2];
+	array[indx2] = temp;
 }
