@@ -42,6 +42,7 @@ const heapSort = (arr) => {
 		// Pass in effected portion of array into heapify to make max-heap.
 		heapify(arr, 0, i);
 	}
+	return arr;
 }
 
 // Swap function swaps elements in array.
@@ -50,3 +51,5 @@ const swap = (arr, indx1, indx2) => {
 	array[indx1] = array[indx2];
 	array[indx2] = temp;
 }
+
+
