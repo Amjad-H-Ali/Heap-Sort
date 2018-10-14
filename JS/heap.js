@@ -14,6 +14,12 @@ const heapify = (arr, indx, size) => {
 	// If right child exist and is larger than current largest node, update largest variable with its index.
 	if (r < size && arr[r] > arr[largest])
 		largest = r;
+	// If largest is not the parent node, then replace parent with the larger node.
+	// Then recursively do the same to the children if any.
+	if (indx !== largest) {
+		swap(arr, arr[indx], arr[largest]);
+		heapify(arr, largest, size);
+	}
 
 					  
 }
