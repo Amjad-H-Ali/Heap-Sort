@@ -10,5 +10,10 @@ const heapify = (arr, indx, size) => {
 // Then "Deletes" last leaf node. Process is repeated until no more nodes remain. 
 // Params: an array.
 const heapSort = (arr) => {
-	
+	// Array length
+	const size = arr.length;
+	// Convert array to max-heap by bubbling up largest nodes to top.
+	// For loop iterates through Parent nodes only.
+	for (let i = (Math.floor(size/2) - 1); i >= 0; i --)
+		heapify(arr, i, size);
 }
