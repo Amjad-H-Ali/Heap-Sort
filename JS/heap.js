@@ -3,7 +3,11 @@ console.log("HeapSort!");
 // Function that creates Max-Heap
 // Parameters: an array, indx of current element in array, length of array.
 const heapify = (arr, indx, size) => {
-
+	// Define and initialize left child indx, right child indx, and largest node indx.
+	// Assume largest node indx is the parent node indx.
+	let largest = indx,
+			  l = (indx * 2) + 1,
+			  r = (indx * 2) + 2;
 }
 
 // Function heapifies array and swaps root with last leaf node
