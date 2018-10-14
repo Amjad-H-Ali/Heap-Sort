@@ -10,7 +10,12 @@ const heapify = (arr, indx, size) => {
 			  r = (indx * 2) + 2;
 	// If left child exist and is larger than current largest node, update largest variable with its index.
 	if (l < size && arr[l] > arr[largest]) 
-		largest = l;		  
+		largest = l;
+	// If right child exist and is larger than current largest node, update largest variable with its index.
+	if (r < size && arr[r] > arr[largest])
+		largest = r;
+
+					  
 }
 
 // Function heapifies array and swaps root with last leaf node
