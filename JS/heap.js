@@ -12,8 +12,18 @@ const heapify = (arr, indx, size) => {
 const heapSort = (arr) => {
 	// Array length
 	const size = arr.length;
-	// Convert array to max-heap by bubbling up largest nodes to top.
+	// Convert array to max-heap by bubbling up largest children nodes to top.
 	// For loop iterates through Parent nodes only.
 	for (let i = (Math.floor(size/2) - 1); i >= 0; i --)
 		heapify(arr, i, size);
+
+	// Swap root node (which is the largest element) with the last leaf node.
+	// And heapify array afterwards and 'delete' last node and repeat.
+	for (let i = size - 1; i >= 0; i --) {
+		// Swap root with last node.
+		swap(arr, arr[0], arr[i]);
+
+		// Pass in effected portion of array into heapify to make max-heap.
+		heapify(arr, 0, i);
+	}
 }
