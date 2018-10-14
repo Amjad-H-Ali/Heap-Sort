@@ -1,8 +1,9 @@
 console.log("HeapSort!");
 
 // Function that creates Max-Heap
-// Parameters: an array, arr
+// Parameters: an array, indx of current element in array, length of array.
+const heapify = (arr, indx, size) => {
 
-const heapify = (arr) => {
-	
 }
+
+// Function takes 
